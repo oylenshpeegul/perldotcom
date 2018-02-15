@@ -12,7 +12,11 @@ for my $filename (File::Find::Rule->file->name('*.md')->in('content')) {
     $json .= $_ if /^\s*{/ .. 0;
     last if /}\s*$/;
   }
-  my $data = decode_json($json);
+  my $data = eval { decode_json($json) };
+  if( $@ ) {
+    say "$filename JSON did not parse correctly";
+    next;
+  }
   next if $data->{categories};
   say "$filename has no categories";
 }
