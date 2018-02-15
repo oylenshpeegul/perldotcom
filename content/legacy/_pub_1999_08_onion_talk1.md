@@ -10,7 +10,6 @@
    "image" : null,
    "title" : "3rd State of the Onion",
    "tags" : [
-      "larry-wall",
       "state-of-the-onion"
    ],
    "thumbnail" : null

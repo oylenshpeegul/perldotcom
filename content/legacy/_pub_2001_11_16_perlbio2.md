@@ -17,7 +17,6 @@
       "computational-biology",
       "genetics",
       "genomics",
-      "james-tisdall",
       "learning-to-program",
       "o-reilly",
       "o-reilly",
@@ -25,7 +24,6 @@
       "perl-for-bioinformatics",
       "programming-for-biology-research",
       "sequencing",
-      "tisdall",
       "web"
    ],
    "image" : null,

@@ -8,7 +8,6 @@
    "tags" : [
       "code-reviews",
       "good-perl-code",
-      "luck-schubert",
       "math-complex",
       "reading-code"
    ],

@@ -14,7 +14,6 @@
       "business",
       "cpan",
       "games",
-      "jt-smith",
       "perl",
       "plack",
       "web-development"

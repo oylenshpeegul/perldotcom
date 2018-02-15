@@ -1,7 +1,6 @@
 {
    "tags" : [
       "apocalypse-6",
-      "damian-conway",
       "exegesis-6",
       "perl-6",
       "subroutines"
@@ -1439,7 +1438,7 @@ We could easily do away with it entirely, by simply putting the `BEGIN` block ri
 
     sub part (Selector $is_sheep,
               Str +@labels is dim(2) = BEGIN {
-                          print "Enter 2 default labels: "; 
+                          print "Enter 2 default labels: ";
                           split(/\s+/, <>, 3).[0..1];
                         },
               *@data
@@ -1541,7 +1540,7 @@ we could just write:
 
 To do that we'd define `&request` like so:
 
-    macro request(int $n, Str $what) 
+    macro request(int $n, Str $what)
         is parsed( /:w \( (\d+) (.*?) \) / )
         returns List of Str
     {
@@ -1710,7 +1709,7 @@ By the way, here's (most of) that same partitioning functionality implemented in
     sub part {
         my ($is_sheep, $maybe_flag_or_labels, $maybe_labels, @data) = @_;
         my ($sheep, $goats);
-        if ($maybe_flag_or_labels eq "labels" && ref $maybe_labels eq 'ARRAY') { 
+        if ($maybe_flag_or_labels eq "labels" && ref $maybe_labels eq 'ARRAY') {
             ($sheep, $goats) = @$maybe_labels;
         }
         elsif (ref $maybe_flag_or_labels eq 'ARRAY') {

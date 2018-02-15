@@ -4,7 +4,6 @@
    "image" : null,
    "date" : "2004-10-21T00:00:00-08:00",
    "tags" : [
-      "chromatic",
       "code-kata",
       "perl-code-kata",
       "perl-exercises",

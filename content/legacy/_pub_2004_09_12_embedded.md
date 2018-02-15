@@ -8,7 +8,6 @@
       "berkeleydb",
       "perl-databases",
       "perl-dbi",
-      "phillip-janert",
       "sqlite",
       "tie-file"
    ],
@@ -61,7 +60,7 @@ Here then is a code snippet that demonstrates the use of `Tie::File` to our stri
 
       # do something smart...
     }
-         
+
 
 There is no question that this program requires heavy disk access, and if we had additional information about the data in question, we should try hard to use it and avoid the brute force approach of comparing "everything to everything". However, if we have no choice, then `Tie::File` makes code like the above as efficient as can be: It does not attempt to load the entire file into memory, so that arbitrarily large files can be processed. The first time we iterate over the file, `Tie::File` builds up an index containing the offset of each record from the beginning of the file, so that subsequent accesses can go directly to the proper position in the file using `seek()`. Finally, accessed records are cached in memory and the cache size can be adjusted passing the `memory` option to the `tie` command.
 
@@ -92,7 +91,7 @@ The following code opens a Berkeley DB (creating a new file, if necessary) and w
     print "$login:\t$uid|$gid $name \t$home\t$shell\n";
 
     $db->db_close();
-          
+
 
 The code above uses the Perl interface to the Berkeley DB modelled after its C API. The `BerkeleyDB` module also supports a `tie` interface, tying the database file to a Perl hash, making code like the following possible: `$hash{ $login } = join( ':', @info );`. The API-style interface, on the other hand, follows the native interface of the Berkeley DB quite closely, which means that most of the (quite extensive) original C API documentation also applies when programming Perl - which is good, since the perldoc for `BerkeleyDB` is a bit sketchy in places. Try `man db_intro` to get started on the native Berkeley DB interface, or visit the Berkeley DB's homepage.
 
@@ -141,7 +140,7 @@ We begin by `connecting` to the SQLite database contained in the file "`data.dbl
     }
 
     $dbh->disconnect;
-          
+
 
 The `books` table references the `authors` table via a foreign key. This is a one-to-many relationship: each book has only a single author, but an author can have written multiple books. What would we have done if books could have been co-authored by multiple writers? We would have used a cross-reference table to represent the resulting many-to-many relationship. Try *that* with Berkeley DBs!
 

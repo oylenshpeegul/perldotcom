@@ -5,7 +5,6 @@
    "categories" : "games",
    "thumbnail" : "/images/_pub_2004_12_01_3d_engine/111-3d_engine.gif",
    "tags" : [
-      "geoff-broadwell",
       "opengl-tutorial",
       "perl-3d",
       "perl-game-programming",
@@ -101,11 +100,11 @@ That's a fair amount of code to print two lines of text (over the course of five
 First, I need to pull in the SDL and OpenGL libraries:
 
     use SDL::App;
-    use SDL::OpenGL; 
+    use SDL::OpenGL;
 
 and add a couple more state variables (a config hash and an `SDL::App` object):
 
-    my ($conf, $sdl_app); 
+    my ($conf, $sdl_app);
 
 #### <span id="Initialization">Initialization</span>
 

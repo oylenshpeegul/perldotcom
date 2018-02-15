@@ -2,11 +2,9 @@
    "tags" : [
       "extracting-table-data",
       "making-simple-changes-to-elements-or-text",
-      "nathan-torkington",
       "perl",
       "perl-cookbook",
-      "templating-with-html-mason",
-      "tom-christiansen"
+      "templating-with-html-mason"
    ],
    "thumbnail" : null,
    "categories" : "development",
@@ -15,7 +13,8 @@
    "date" : "2003-09-17T00:00:00-08:00",
    "draft" : null,
    "authors" : [
-      "perldotcom"
+      "nathan-torkington",
+      "tom-christiansen"
    ],
    "description" : " Editor's note: In this third and final batch of recipes excerpted from Perl Cookbook, you'll find solutions and code examples for extracting HTML table data, templating with HTML::Mason, and making simple changes to elements or text. Sample Recipe: Extracting...",
    "slug" : "/pub/2003/09/17/perlcookbook.html"
@@ -147,10 +146,10 @@ The data tags still contain tags and entities. If you don't want the tags and en
       my $tables = get_tables($URL);
       my $modules = $tables->[4];    # 5th table holds module data
       foreach my $r (@{ $modules->{rows} }) {
-        my ($module_name, $module_link, $status, $description) = 
+        my ($module_name, $module_link, $status, $description) =
             parse_module_row($r, $URL);
         print "$module_name <$module_link>\n\t$status\n\t$description\n\n";
-      } 
+      }
       sub get_tables {
         my $URL = shift;
         my $page = get($URL);
